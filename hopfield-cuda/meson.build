@@ -7,7 +7,7 @@ sources = [
   'src/util.c'
 ]
 cpu_sources = ['src/hopfield_retrieve.c']
-cuda_sources = ['src/hopfiled_retrieve.cu']
+cuda_sources = ['src/hopfield_retrieve.cu']
 includes = include_directories('include')
 
 cc = meson.get_compiler('c')
