@@ -440,6 +440,7 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/vim,venv,macos,linux,emacs,python,images,windows,jetbrains+all,jupyternotebook,visualstudiocode
 
 .vscode/settings.json
+!hopfield-cuda/include
 hopfield-cuda/build/
 hopfield-cuda/build-xcode/
 mnist_test/
