@@ -16,7 +16,10 @@ if cc.get_id() in ['gcc', 'clang']
 elif cc.get_id() == 'intel'
   add_global_arguments('-w2', language : 'c')
 endif
-executable('main', sources + cpu_sources, include_directories : includes)
+m_dep = cc.find_library('m', required : true)
+
+executable('main', sources + cpu_sources, include_directories : includes, dependencies: m_dep)
+
 if add_languages('cuda', required : false)
-  executable('maincuda', sources + cuda_sources, include_directories : includes)
+  executable('maincuda', sources + cuda_sources, include_directories : includes, dependencies: m_dep)
 endif

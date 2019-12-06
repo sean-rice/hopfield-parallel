@@ -21,7 +21,7 @@ hopfield_pattern load_hopfield_pattern(FILE *fp) {
     if (NULL == data) {
         goto pattern_load_err;
     }
-    memset(data, NAN, pattern.size*sizeof(NAN));
+    for (size_t i = 0; i < pattern.size; ++i) { data[i] = NAN; }
 
     /* read example data */
     if (pattern.size != fread(data, sizeof(data[0]), pattern.size, fp)) {
@@ -81,7 +81,7 @@ void print_pattern(hopfield_pattern *pattern) {
             else if (val < 0.0) { c = ' '; }
             fprintf(stdout, "%c%c", c, c);
         }
-        fprintf(stdout, "|\n", stdout);
+        fprintf(stdout, "|\n");
     }
     fprintf(stdout, " ");
     print_seq('-', 2*w, true);

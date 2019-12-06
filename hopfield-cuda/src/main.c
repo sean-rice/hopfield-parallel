@@ -9,6 +9,8 @@
 #include "../include/hopfield_pattern.h"
 #include "../include/util.h"
 
+#define LOAD_PATH_SIZE 1024
+
 int main(int argc, char *argv[]) {
     if (2 != argc) {
         return -1;
@@ -29,7 +31,6 @@ int main(int argc, char *argv[]) {
 
     seed_rng();
 
-    const size_t LOAD_PATH_SIZE = 1024;
     char load_path[LOAD_PATH_SIZE] = {0};
     while (1) {
         memset(load_path, '\0', LOAD_PATH_SIZE);
