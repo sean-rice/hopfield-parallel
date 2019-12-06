@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "../include/hopfield_retrieve.h"
 #include "../include/hopfield_network.h"
@@ -53,12 +54,16 @@ int main(int argc, char *argv[]) {
         }
 
         /* network retrieval */
+        clock_t dt = clock();
         hopfield_retrieve(&net, &pattern);
+        dt = clock() - dt;
         bool retrieved_ok = hopfield_pattern_ok(&pattern);
         printf("retrieved_ok: %s\n", retrieved_ok ? "true" : "false");
         if (retrieved_ok == true) {
             print_pattern(&pattern);
         }
+        double retrieve_time = ((double) dt) / CLOCKS_PER_SEC; // calculate the elapsed
+        printf("time: %f\n", retrieve_time);
     }
     fprintf(stdout, "done!\n");
     return 0;
