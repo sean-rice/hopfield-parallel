@@ -26,7 +26,7 @@ hopfield_network load_hopfield_network(FILE *fp) {
 
     /* allocate weight matrix */
     int n_weights = net.size * net.size;
-    float *weights = (float*) malloc(sizeof(float) * n_weights);
+    float *weights = (float*) malloc(n_weights * sizeof(float));
     if (NULL == weights) {
         goto net_load_err;
     }

@@ -17,7 +17,7 @@ hopfield_pattern load_hopfield_pattern(FILE *fp) {
     }
 
     /* allocate data buffer */
-    float *data = malloc(pattern.size);
+    float *data = malloc(pattern.size * sizeof(float));
     if (NULL == data) {
         goto pattern_load_err;
     }
