@@ -1,0 +1,33 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "meson_build",
+            "command": "/usr/local/bin/meson",
+            "args": [
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/hopfield-cuda"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "ninja_build",
+            "command": "/usr/local/bin/ninja",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/hopfield-cuda/build"
+            }
+        },
+        {
+            "label": "meson_ninja_build",
+            "dependsOn": [
+                "meson_build",
+                "ninja_build"
+            ],
+            "dependsOrder": "sequence"
+        }
+    ],
+    "version": "2.0.0"
+}

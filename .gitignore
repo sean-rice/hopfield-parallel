@@ -438,3 +438,12 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/vim,venv,macos,linux,emacs,python,images,windows,jetbrains+all,jupyternotebook,visualstudiocode
+
+.vscode/settings.json
+hopfield-cuda/build/
+hopfield-cuda/build-xcode/
+mnist_test/
+mnist_train/
+weights.dat
+weights-striped.dat
+*.pattern

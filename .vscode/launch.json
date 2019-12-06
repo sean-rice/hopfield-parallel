@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "clang debug main",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/hopfield-cuda/build/main",
+            "args": ["../weights.dat"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/hopfield-cuda",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "meson_ninja_build",
+        }
+    ]
+}
